@@ -1,88 +1,146 @@
-available_text_models: ["gpt-3.5-turbo", "gpt-3.5-turbo-16k", "gpt-4-1106-preview", "gpt-4-vision-preview", "gpt-4", "text-davinci-003"]
+available_text_models:
+  - "gpt-5.4-pro"
+  - "gpt-5.4"
+  - "gpt-5.4-mini"
+  - "gpt-5.4-nano"
+  - "gpt-4.1"
+  - "gpt-4.1-mini"
+  - "gpt-4.1-nano"
+  - "gpt-4o"
+  - "gpt-4o-mini"
 
 info:
-  gpt-3.5-turbo:
+  gpt-5.4-pro:
     type: chat_completion
-    name: ChatGPT
-    description: ChatGPT is that well-known model. It's <b>fast</b> and <b>cheap</b>. Ideal for everyday tasks. If there are some tasks it can't handle, try the <b>GPT-4</b>.
-
-    price_per_1000_input_tokens: 0.0015
-    price_per_1000_output_tokens: 0.002
-
-    scores:
-      Smart: 3
-      Fast: 5
-      Cheap: 5
-
-  gpt-3.5-turbo-16k:
-    type: chat_completion
-    name: GPT-16K
-    description: ChatGPT is that well-known model. It's <b>fast</b> and <b>cheap</b>. Ideal for everyday tasks. If there are some tasks it can't handle, try the <b>GPT-4</b>.
-
-    price_per_1000_input_tokens: 0.003
-    price_per_1000_output_tokens: 0.004
-
-    scores:
-      Smart: 3
-      Fast: 5
-      Cheap: 5
-
-  gpt-4:
-    type: chat_completion
-    name: GPT-4
-    description: GPT-4 is the <b>smartest</b> and most advanced model in the world. But it is slower and not as cost-efficient as ChatGPT. Best choice for <b>complex</b> intellectual tasks.
-
+    name: GPT-5.4 Pro
+    description: >
+      Smarter, more precise responses than GPT-5.4.
+      Uses more compute for harder reasoning. Slowest of the 5.4 family.
+      Available via Responses API, Chat Completions, Assistants, and more.
+      1.05M context window, 128k max output.
     price_per_1000_input_tokens: 0.03
-    price_per_1000_output_tokens: 0.06
-
+    price_per_1000_output_tokens: 0.18
     scores:
       Smart: 5
-      Fast: 2
+      Fast: 1
+      Cheap: 1
+
+  gpt-5.4:
+    type: chat_completion
+    name: GPT-5.4
+    description: >
+      OpenAI's most capable model for professional work.
+      Best for complex, high-stakes tasks. 1.05M context window.
+    price_per_1000_input_tokens: 0.0025
+    price_per_1000_cached_input_tokens: 0.00025
+    price_per_1000_output_tokens: 0.015
+    scores:
+      Smart: 5
+      Fast: 3
       Cheap: 2
 
-  gpt-4-1106-preview:
+  gpt-5.4-mini:
     type: chat_completion
-    name: GPT-4 Turbo
-    description: GPT-4 Turbo is a <b>faster</b> and <b>cheaper</b> version of GPT-4. It's as smart as GPT-4, so you should use it instead of GPT-4.
-
-    price_per_1000_input_tokens: 0.01
-    price_per_1000_output_tokens: 0.03
-
+    name: GPT-5.4 Mini
+    description: >
+      Strong mini model for coding, computer use, and subagents.
+      Best price-to-performance in the GPT-5.4 class.
+    price_per_1000_input_tokens: 0.00075
+    price_per_1000_cached_input_tokens: 0.000075
+    price_per_1000_output_tokens: 0.0045
     scores:
-      smart: 5
-      fast: 4
-      cheap: 3
+      Smart: 4
+      Fast: 5
+      Cheap: 4
 
-  gpt-4-vision-preview:
+  gpt-5.4-nano:
     type: chat_completion
-    name: GPT-4 Vision
-    description: Ability to <b>understand images</b>, in addition to all other GPT-4 Turbo capabilties.
-
-    price_per_1000_input_tokens: 0.01
-    price_per_1000_output_tokens: 0.03
-
-    scores:
-      smart: 5
-      fast: 4
-      cheap: 3
-
-  text-davinci-003:
-    type: completion
-    name: GPT-3.5
-    description: GPT-3.5 is a legacy model. Actually there is <b>no reason to use it</b>, because it is more expensive and slower than ChatGPT, but just about as smart.
-
-    price_per_1000_input_tokens: 0.02
-    price_per_1000_output_tokens: 0.02
-
+    name: GPT-5.4 Nano
+    description: >
+      Cheapest GPT-5.4-class model for simple high-volume tasks.
+      Ideal for bulk, low-complexity workloads.
+    price_per_1000_input_tokens: 0.0002
+    price_per_1000_cached_input_tokens: 0.00002
+    price_per_1000_output_tokens: 0.00125
     scores:
       Smart: 3
-      Fast: 2
+      Fast: 5
+      Cheap: 5
+
+  gpt-4.1:
+    type: chat_completion
+    name: GPT-4.1
+    description: >
+      Strong all-round model. 256k context.
+      Good for complex reasoning and high-quality output.
+    price_per_1000_input_tokens: 0.002
+    price_per_1000_output_tokens: 0.008
+    scores:
+      Smart: 4
+      Fast: 3
       Cheap: 3
 
+  gpt-4.1-mini:
+    type: chat_completion
+    name: GPT-4.1 Mini
+    description: >
+      Efficient mini variant of GPT-4.1.
+      Great for everyday tasks that don't need maximum capability.
+    price_per_1000_input_tokens: 0.00015
+    price_per_1000_output_tokens: 0.0006
+    scores:
+      Smart: 3
+      Fast: 5
+      Cheap: 5
+
+  gpt-4.1-nano:
+    type: chat_completion
+    name: GPT-4.1 Nano
+    description: >
+      Cheapest GPT-4.1-class model. Built for high-volume,
+      low-complexity tasks where speed and cost matter most.
+    price_per_1000_input_tokens: 0.0001
+    price_per_1000_output_tokens: 0.0004
+    scores:
+      Smart: 2
+      Fast: 5
+      Cheap: 5
+
+  gpt-4o:
+    type: chat_completion
+    name: GPT-4o
+    description: >
+      Balanced flagship model. Multimodal — text, audio, images.
+      Good all-around choice when you need capability without GPT-5 pricing.
+    price_per_1000_input_tokens: 0.0025
+    price_per_1000_output_tokens: 0.01
+    scores:
+      Smart: 4
+      Fast: 4
+      Cheap: 4
+
+  gpt-4o-mini:
+    type: chat_completion
+    name: GPT-4o Mini
+    description: >
+      Fast, cheap, efficient. Great for everyday tasks,
+      high-volume inference, and subagent orchestration.
+    price_per_1000_input_tokens: 0.00015
+    price_per_1000_output_tokens: 0.0006
+    scores:
+      Smart: 3
+      Fast: 5
+      Cheap: 5
+
   dalle-2:
-     type: image
-     price_per_1_image: 0.018  # 512x512
+    type: image
+    price_per_1_image: 0.018  # 512x512
 
   whisper:
     type: audio
     price_per_1_min: 0.006
+
+# ── Models removed (legacy / deprecated) ──
+#
+#   gpt-3.5-turbo, gpt-3.5-turbo-16k, gpt-4-1106-preview,
+#   gpt-4-vision-preview, gpt-4, text-davinci-003
